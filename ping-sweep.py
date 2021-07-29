@@ -1,4 +1,5 @@
 import subprocess
+import sys
 
 cmd = "ping -c1 127.0.0."
 
@@ -10,5 +11,5 @@ for x in range (0,255):
         if out == '' and p.poll() != None:
             break
         if out != '':
-            p.stdout.write(out)
-            p.stdout.flush()
+            sys.stdout.write(out.decode)
+            sys.stdout.flush()

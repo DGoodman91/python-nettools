@@ -1,5 +1,6 @@
 #
 # Based on sample code from Black Hat Python (Justin Seitz, 2015)
+# Fixed some stuff and updated for Python 3
 #
 
 import getopt
@@ -47,6 +48,7 @@ def client_sender(buffer):
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
     try:
+        if debug : print("[DEBUG] Attempting connection to target " + target + ":" + str(port))
         client.connect((target, port))
 
         # send data
@@ -210,6 +212,7 @@ def main():
     global upload_destination
     global execute
     global command
+    global target
 
     global debug
     
@@ -250,7 +253,7 @@ def main():
         # read from cmdline
         buffer = sys.stdin.read()
 
-        if debug : print("[DEBUG] Read first input, sending it to the client_sender function")
+        if debug : print("[DEBUG] Read first input (" + buffer + "), sending it to the client_sender function")
 
         # send data off
         client_sender(buffer)
