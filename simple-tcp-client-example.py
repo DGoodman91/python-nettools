@@ -1,8 +1,8 @@
 # the `socket` module is the foundation for all networking client & server tools in python
 import socket
 
-target_host = '127.0.0.1'
-target_port = 5555
+target_host = '142.250.217.238'
+target_port = 80
 
 # create a socket object - SOCK_STREAM indicates that this will be a TCP client
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
